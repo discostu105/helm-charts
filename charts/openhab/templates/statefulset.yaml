@@ -22,6 +22,7 @@ spec:
       imagePullSecrets:
         {{- toYaml . | nindent 8 }}
       {{- end }}
+      hostNetwork: {{ .Values.hostNetwork }}
       serviceAccountName: {{ include "openhab.serviceAccountName" . }}
       securityContext:
         {{- toYaml .Values.podSecurityContext | nindent 8 }}
@@ -117,6 +118,16 @@ spec:
                 configMapKeyRef:
                   name: "openhab"
                   key: "OPENHAB_USERDATA"
+            - name: OPENHAB_LOGDIR
+              valueFrom:
+                configMapKeyRef:
+                  name: "openhab"
+                  key: "OPENHAB_LOGDIR"
+            - name: OPENHAB_BACKUPS
+              valueFrom:
+                configMapKeyRef:
+                  name: "openhab"
+                  key: "OPENHAB_BACKUPS"
             - name: USER_ID
               valueFrom:
                 configMapKeyRef:

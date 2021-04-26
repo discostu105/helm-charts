@@ -23,6 +23,8 @@ serviceAccount:
 # Your secret should contain keys uuid and secret.
 # openhabCloudSecretName: ""
 
+# using same network interface as kubernetes node allows device discovery
+hostNetwork: false
 
 persistence:
   enabled: false

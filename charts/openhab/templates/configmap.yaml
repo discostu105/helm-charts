@@ -7,6 +7,8 @@ metadata:
 data:
   OPENHAB_CONF: '{{ default "/data/config" .Values.environment.OPENHAB_CONF }}'
   OPENHAB_USERDATA: '{{ default "/data/userdata" .Values.environment.OPENHAB_USERDATA }}'
+  OPENHAB_LOGDIR: '{{ default "/data/config" .Values.environment.OPENHAB_LOGDIR }}'
+  OPENHAB_BACKUPS: '{{ default "/data/config" .Values.environment.OPENHAB_BACKUPS }}'
   USER_ID: '{{ default "1000" .Values.environment.USER_ID }}'
   GROUP_ID: '{{ default "1000" .Values.environment.GROUP_ID }}'
   OPENHAB_HTTP_PORT: '{{ default "8080" .Values.environment.OPENHAB_HTTP_PORT }}'
